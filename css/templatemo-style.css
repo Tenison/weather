@@ -57,9 +57,9 @@ body {
 }
 
 .tm-welcome-box { 
-	border: 1px solid white;
-	border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+	border: 4px solid white;
+	border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 	max-width: 400px;
 	margin-top: 30px;
 	width: 100%;
@@ -587,7 +587,7 @@ figure.effect-bubba:hover p {
 
 	.tm-nav-item-link { padding: 30px 60px; }
 	.tm-main-content { margin-left: 370px; }
-	.tm-welcome-box { max-width: 390px; }
+	.tm-welcome-box { max-width: 370px; }
 	.tm-welcome-text { padding: 30px; }
 	.tm-section-title { margin-bottom: 20px; }
 	.tm-box-pad { padding: 45px; }
