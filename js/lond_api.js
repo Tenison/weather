@@ -9,7 +9,7 @@ class api_class{
 		const api_string = `http://api.openweathermap.org/data/2.5/forecast?id=${this.area}&APPID=fe7195f139f5057a9002de3b032afef3`;
 
 		request.open('GET', api_string, true);
-		request.onload = function () {
+		request.onload = () => {
 
 		  // accessing JSON data here
 		  const data = JSON.parse(this.response);
