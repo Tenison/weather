@@ -57,6 +57,9 @@ body {
 }
 
 .tm-welcome-box { 
+	border: 1px solid white;
+	border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 	max-width: 400px;
 	margin-top: 30px;
 	width: 100%;
