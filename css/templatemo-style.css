@@ -454,6 +454,17 @@ figure.effect-bubba:hover p {
 	transform: translate3d(0,0,0);
 }
 
+#gallery{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
+}
+
 #gallery, .grid { overflow: hidden; }
 .grid { margin: -15px; }
 
