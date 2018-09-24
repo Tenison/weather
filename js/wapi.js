@@ -4,9 +4,9 @@ request.onload = function () {
 
     var data = JSON.parse(request.responseText);
     if (request.status >= 200 && request.status < 400) {
-     //   console.log(data.list);
-       // document.getElementById('ac').innerHTML = data.list[0].main.temp;
-        document.getElementById('ac').innerHTML = data.list[0].weather[0].description;
+        //console.log(data.list);
+        // document.getElementById('ac').innerHTML = data.list[0].main.temp;
+        document.getElementById('ac').innerHTML = data.list[0].weather[0].description + "</br>sea lv:" + data.list[0].main.sea_level;
         
     } else{
         console.log('did not work');
@@ -23,9 +23,9 @@ request1.onload = function () {
 
     var data = JSON.parse(request1.responseText);
     if (request1.status >= 200 && request1.status < 400) {
-        console.log(data.list);
-       // document.getElementById('ac').innerHTML = data.list[0].main.temp;
-        document.getElementById('ty').innerHTML = data.list[0].weather[0].description;
+        //console.log(data.list);
+        // document.getElementById('ac').innerHTML = data.list[0].main.temp;
+        document.getElementById('ty').innerHTML = data.list[0].weather[0].description + "</br>sea lv:" + data.list[0].main.sea_level;
         
     } else{
         console.log('did not work');

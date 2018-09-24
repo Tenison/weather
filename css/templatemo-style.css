@@ -29,7 +29,7 @@ p {  line-height: 2; }
 p:last-child { margin-bottom: 0; }
 
 body {
-	color: #000;
+	color: #212529;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
@@ -163,10 +163,10 @@ body {
 
 .tm-button,
 .tm-button:focus {
-	background-color: #158baf;
+	background-color: #EEEEEE;
 	border: none;
 	border-radius: 0;
-	color: #fff;
+	color: #158baf;
 	display: block;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
@@ -175,7 +175,7 @@ body {
 .tm-button:hover,
 .tm-button.active {
 	background-color: #158baf;
-	color: #EAD53D;
+	color: #EEEEEE;
 	text-decoration: none;
 }
 
@@ -290,10 +290,10 @@ body {
 
 .tm-content-box-home { 
 	position: relative; 
-	margin-bottom: 63px;
+	margin-bottom: 50px;
 }
 
-.tm-content-box { margin-top: 60px; }
+.tm-content-box { margin-top: 40px; }
 .tm-content-box:first-child { margin-top: 0; }
 .tm-welcome-text { padding: 20px; }
 .tm-welcome-boxes-container { width: 100%; }
@@ -514,9 +514,10 @@ figure.effect-bubba:hover p {
 	.tm-welcome-text { 
 		background-color: rgba(255,255,255,0.8);
 		padding: 40px;
+		text-align: center;
 	}
 
-	.tm-content-box-home { margin-bottom: 126px; }
+	.tm-content-box-home { margin-bottom: 100px; }
 
 	.tm-flex {
 		-webkit-flex-flow: row;
