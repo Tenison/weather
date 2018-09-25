@@ -1,5 +1,6 @@
 # weather project
-#created with the help of Open Weather Map
+##Siple web stack
+#created with the help of Open Weather Map Api
 #create a free acount to access weather information.
 
 #eyeTengin weather project
