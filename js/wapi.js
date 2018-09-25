@@ -49,7 +49,18 @@ class wapi{
              //begin JSON Access
            var data = JSON.parse(request.responseText);
             if (request.status >=200 && request.status < 400) {
-                document.getElementById(place).innerHTML = data.list[0].weather[0].description + "</br>sea lv:" + data.list[0].main.sea_level;
+                var weather =data.list[0].weather[0].description;
+                var sealv = data.list[0].main.sea_level;
+                
+                document.getElementById(place).innerHTML = weather + "</br>sea lv:" + sealv;
+                document.getElementById(place).onmouseover = function (){
+             
+                    var a = true;
+                    if (a == true) {
+                        window.speechSynthesis.speak(new SpeechSynthesisUtterance(`the weather in ${place} is ${weather} and the sea level is ${sealv} feet`)); 
+                    }
+             
+                    };
                 
             }else{
                 console.log('no response');
@@ -57,6 +68,7 @@ class wapi{
             }
        };
        request.send();
+      
     }
 }
 
