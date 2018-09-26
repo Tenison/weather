@@ -98,7 +98,7 @@ function wapi  (city, place) {
    };
    request.send();   
      
-};
+}
 
 wapi(2306104, 'Accra');
 wapi(1850692, 'Tokyo');
