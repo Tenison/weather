@@ -82,7 +82,7 @@ const wapi = (city, place) => {
        var data = JSON.parse(request.responseText);
         if (request.status >=200 && request.status < 400) {
             //store data from api callback in variables
-            var weather =data.list[0].weather[0].description;
+            var weather = data.list[0].weather[0].description;
             var sealv = data.list[0].main.sea_level;
             //DOM manipulation to display data in the DOM
             document.getElementById(place).innerHTML = weather + "</br>sea lv:" + sealv;
