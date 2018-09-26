@@ -72,7 +72,7 @@ const tokyo = new wapi(1850692, 'Tokyo');*/
 
 //function approach
 
-const wapi = (city, place) => {
+function wapi  (city, place) {
               
     const request = new XMLHttpRequest();
     const wapi_string =`http://api.openweathermap.org/data/2.5/forecast?id=${city}&APPID=d24754b8c30e5c609dc65e0c01db6f7d`;
