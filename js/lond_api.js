@@ -16,13 +16,16 @@ class api_class{
 
 		  if (request.status >= 200 && request.status < 400) {
 			 //console.log(data.list[0].main.temp);
-			 var weather =data.list[0].weather[0].description;
-       var sealv = data.list[0].main.sea_level;
+			 //store data from api callback in variables
+			 	var weather =data.list[0].weather[0].description;
+				var sealv = data.list[0].main.sea_level;
+				//DOM manipulation to display data in the DOM
 				 document.getElementById(place).innerHTML += weather + "</br>sea lv:" + sealv;
+				 //ENABLE speech sythesis in the browser
 				 document.getElementById(place).onmouseover = function (){
              
-					var a = true;
-					if (a == true) {
+					
+					if (true) {
 							window.speechSynthesis.speak(new SpeechSynthesisUtterance(`the weather in ${place} is ${weather} and the sea level is ${sealv} feet`)); 
 								}
 				};
