@@ -24,13 +24,10 @@ class api_class{
 					var a = true;
 					if (a == true) {
 							window.speechSynthesis.speak(new SpeechSynthesisUtterance(`the weather in ${place} is ${weather} and the sea level is ${sealv} feet`)); 
-					}
-	 
-					};
-		  } else {
-		    console.log('error');
-		  }
-		}
+								}
+				};
+		  } else {console.log('error'); }
+		};
 
 		request.send();
 	}

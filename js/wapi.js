@@ -54,18 +54,13 @@ class wapi{
                 
                 document.getElementById(place).innerHTML = weather + "</br>sea lv:" + sealv;
                 document.getElementById(place).onmouseover = function (){
-             
                     var a = true;
                     if (a == true) {
                         window.speechSynthesis.speak(new SpeechSynthesisUtterance(`the weather in ${place} is ${weather} and the sea level is ${sealv} feet`)); 
                     }
-             
-                    };
+                        };
                 
-            }else{
-                console.log('no response');
-                
-            }
+            }else{console.log('no response');}
        };
        request.send();
       
