@@ -75,15 +75,14 @@ const accra = new wapi(2306104, 'Accra');
 const tokyo = new wapi(1850692, 'Tokyo');*/
 
 //function approach
-
-function wapi  (city, place) {
-              
+const wapi = (city, place) => {     
     const request = new XMLHttpRequest();
     const wapi_string =`http://api.openweathermap.org/data/2.5/forecast?id=${city}&APPID=d24754b8c30e5c609dc65e0c01db6f7d`;
+    
     request.open('GET', wapi_string, true );
-     request.onload = function () {
-         //begin JSON Access
-       var data = JSON.parse(request.responseText);
+    request.onload = function () {
+        //begin JSON Access
+        let data = JSON.parse(request.responseText);
         if (request.status >=200 && request.status < 400) {
             //store data from api callback in variables
             var weather = data.list[0].weather[0].description;
@@ -91,14 +90,14 @@ function wapi  (city, place) {
             //DOM manipulation to display data in the DOM
             document.getElementById(place).innerHTML = weather + "</br>sea lv:" + sealv;
             //ENABLE speech sythesis in the browser
-            document.getElementById(place).onmouseover = function (){
-                
-                if (true) {
+            document.getElementById(place).onmouseover = () => {   
+                if(true){
                     window.speechSynthesis.speak(new SpeechSynthesisUtterance(`the weather in ${place} is ${weather} and the sea level is ${sealv} feet`)); 
                 }
-                    };
-            
-        }else{console.log('no response');}
+            };
+        }else{
+            console.log('no response');
+        }
    };
    request.send();   
      
