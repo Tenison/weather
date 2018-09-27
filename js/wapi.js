@@ -37,7 +37,7 @@ request1.onload = function () {
 request1.send();*/
 //
 
-class wapi{
+/*class wapi{
     constructor(city, place){
         this.city = city;
         this.place =  place;
@@ -53,10 +53,56 @@ class wapi{
             }else{
                 console.log('no response');     
             }
+                var weather =data.list[0].weather[0].description;
+                var sealv = data.list[0].main.sea_level;
+                
+                document.getElementById(place).innerHTML = weather + "</br>sea lv:" + sealv;
+                document.getElementById(place).onmouseover = function (){
+                    var a = true;
+                    if (a == true) {
+                        window.speechSynthesis.speak(new SpeechSynthesisUtterance(`the weather in ${place} is ${weather} and the sea level is ${sealv} feet`)); 
+                    }
+                        };
+                
+            }else{console.log('no response');}
        };
        request.send();
+      
     }
 }
 
 const accra = new wapi(2306104, 'Accra');
-const tokyo = new wapi(1850692, 'Tokyo');
+const tokyo = new wapi(1850692, 'Tokyo');*/
+
+//function approach
+
+function wapi  (city, place) {
+              
+    const request = new XMLHttpRequest();
+    const wapi_string =`http://api.openweathermap.org/data/2.5/forecast?id=${city}&APPID=d24754b8c30e5c609dc65e0c01db6f7d`;
+    request.open('GET', wapi_string, true );
+     request.onload = function () {
+         //begin JSON Access
+       var data = JSON.parse(request.responseText);
+        if (request.status >=200 && request.status < 400) {
+            //store data from api callback in variables
+            var weather = data.list[0].weather[0].description;
+            var sealv = data.list[0].main.sea_level;
+            //DOM manipulation to display data in the DOM
+            document.getElementById(place).innerHTML = weather + "</br>sea lv:" + sealv;
+            //ENABLE speech sythesis in the browser
+            document.getElementById(place).onmouseover = function (){
+                
+                if (true) {
+                    window.speechSynthesis.speak(new SpeechSynthesisUtterance(`the weather in ${place} is ${weather} and the sea level is ${sealv} feet`)); 
+                }
+                    };
+            
+        }else{console.log('no response');}
+   };
+   request.send();   
+     
+}
+
+wapi(2306104, 'Accra');
+wapi(1850692, 'Tokyo');
