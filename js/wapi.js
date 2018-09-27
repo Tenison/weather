@@ -45,15 +45,13 @@ class wapi{
         const request = new XMLHttpRequest();
         const wapi_string =`http://api.openweathermap.org/data/2.5/forecast?id=${this.city}&APPID=d24754b8c30e5c609dc65e0c01db6f7d`;
         request.open('GET', wapi_string, true );
-         request.onload = function () {
+         request.onload = function(){
              //begin JSON Access
            var data = JSON.parse(request.responseText);
             if (request.status >=200 && request.status < 400) {
-                document.getElementById(place).innerHTML = data.list[0].weather[0].description + "</br>sea lv:" + data.list[0].main.sea_level;
-                
+                document.getElementById(place).innerHTML = data.list[0].weather[0].description + "</br>sea lv:" + data.list[0].main.sea_level;   
             }else{
-                console.log('no response');
-                
+                console.log('no response');     
             }
        };
        request.send();
