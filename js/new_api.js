@@ -1,5 +1,5 @@
-class api_class{
-	constructor(area, place){
+
+const api_class = (area, place) =>{
 		this.area = area;
 		this.place =  place;
 
@@ -29,10 +29,9 @@ class api_class{
 		  		console.log('error'); 
 		  	}
 		};
-
 		request.send();
 	}
 }
 
-const london = new api_class(2643743, 'london');
-const Massachusetts = new api_class(6254926, 'Boston');
+const london = api_class(2643743, 'london');
+const Massachusetts = api_class(6254926, 'Boston');
