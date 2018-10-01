@@ -31,7 +31,6 @@ const api_class = (area, place) =>{
 		};
 		request.send();
 	}
-}
 
 const london = api_class(2643743, 'london');
 const Massachusetts = api_class(6254926, 'Boston');
